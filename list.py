@@ -3,7 +3,10 @@
 import os
 import sys
 
-names = set()
+names = {
+        'www.google-analytics.com',
+        'google-analytics.com',
+        }
 
 for line in sys.stdin:
 
