@@ -1,3 +1,4 @@
+{}:
 let
   nixpkgs = import <nixpkgs> { };
 in
