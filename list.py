@@ -6,6 +6,7 @@ import sys
 names = {
         'www.google-analytics.com',
         'google-analytics.com',
+        'adwords.google.com',
         }
 
 for line in sys.stdin:
