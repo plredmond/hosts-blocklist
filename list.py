@@ -7,6 +7,8 @@ names = {
         'www.google-analytics.com',
         'google-analytics.com',
         'adwords.google.com',
+        'amazon-adsystem.com',
+        'googletagservices.com',
         }
 
 for line in sys.stdin:

@@ -1,4 +1,5 @@
-{}:
+{ url ? "https://hosts.oisd.nl/basic/"
+}:
 let
   nixpkgs = import <nixpkgs> { };
 in
@@ -10,7 +11,7 @@ nixpkgs.stdenv.mkDerivation {
     set -x
     mkdir -p $out/etc
     ${nixpkgs.python3}/bin/python list.py \
-      < ${builtins.fetchurl "https://hosts.oisd.nl/basic/"} \
+      < ${builtins.fetchurl url} \
       > $out/etc/hosts
     set +x
   '';
