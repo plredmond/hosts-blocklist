@@ -1,28 +1,30 @@
 #!/usr/bin/env python3
 
 import os
+import re
 import sys
 
-names = {
-        'www.google-analytics.com',
-        'google-analytics.com',
-        'adwords.google.com',
-        'amazon-adsystem.com',
-        'googletagservices.com',
-        }
-
 for line in sys.stdin:
+    line = line.strip()
 
-    if not line.strip():
+    if not line:
         continue # skip blanks
 
-    if line.strip().startswith('#'):
+    first = line[0]
+    last = line[-1]
+
+    if '#' == first:
         continue # skip comments
 
-    addr, dns = line.strip().split()
-    assert addr == '0.0.0.0'
+    if '[' == first and ']' == last:
+        continue # skip abp headers
 
-    names.add(dns)
+    if '!' == first:
+        continue # skip abp headers
 
-for name in sorted(names):
-    print('127.0.0.1', name)
+    # lines are like '||domain^'
+    m = re.match(r'\|\|([-\w\.]+)\^', line)
+    assert m is not None, (line, m)
+    domain = m.group(1)
+
+    print('127.0.0.1', domain)

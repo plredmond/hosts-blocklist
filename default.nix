@@ -1,4 +1,4 @@
-{ url ? "https://hosts.oisd.nl/basic/"
+{ url ? "https://small.oisd.nl/"
 }:
 let
   nixpkgs = import <nixpkgs> { };
