@@ -22,3 +22,5 @@ Add it to your `configuration.nix` like this:
   ...
 }
 ```
+
+See [toot](https://recurse.social/@redmp/113193934563178408).
