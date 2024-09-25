@@ -7,7 +7,7 @@ Add it to your `configuration.nix` like this:
   ...
 
   networking.hostFiles = [
-    ("${import <path-to-this-repo> { url="https://big.oisd.nl/"; }}/etc/hosts")
+    ("${import <path-to-this-repo> { url="https://small.oisd.nl/"; }}/etc/hosts")
     # ... more urls ...
   ];
 
